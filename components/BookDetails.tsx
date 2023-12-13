@@ -23,7 +23,7 @@ const BookDetails = ({selectedDate, setSelectedDate, selectedTimeSlot, setSelect
       // Add more time slots as needed
     ];
   
-    const handleTimeSlotChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleTimeSlotChange = (event: any) => {
       setSelectedTimeSlot(event.target.value);
     };
   
@@ -32,7 +32,7 @@ const BookDetails = ({selectedDate, setSelectedDate, selectedTimeSlot, setSelect
       setMinDate(new Date());
     }, []);
     
-    // const handleSubmit = async(e: React.ChangeEvent<HTMLSelectElement>) => {
+    // const handleSubmit = async(e: any) => {
     //     try {
     //         e.preventDefault();
     //         setisLoading(true);
@@ -77,7 +77,7 @@ const BookDetails = ({selectedDate, setSelectedDate, selectedTimeSlot, setSelect
                         displayFormat={"DD/MM/YYYY"} 
                         minDate={minDate}
                         value={selectedDate} 
-                        onChange={(selectedDate) => setSelectedDate(selectedDate)} 
+                        onChange={(selectedDate: any) => setSelectedDate(selectedDate)} 
                     />
                 </div>
                 

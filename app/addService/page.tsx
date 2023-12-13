@@ -16,7 +16,7 @@ const AddService = () => {
     })
     const [isLoading, setisLoading] = useState(false)
 
-    const handleChange = (event) => {
+    const handleChange = (event: any) => {
         const {name, value} = event.target;
         setService(prevData => {
             return {
@@ -25,7 +25,7 @@ const AddService = () => {
             }
         })
     } 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async(e: any) => {
         try {
             e.preventDefault();
             setisLoading(true);
