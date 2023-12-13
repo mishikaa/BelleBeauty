@@ -14,7 +14,7 @@ export const HeroSection = () => {
   // console.log(session?.user._id)
   var userIsAdmin;
   if (session) {
-    userIsAdmin = isAdmin(session?.user.id);
+    userIsAdmin = isAdmin(session?.user?.id);
   }
 
   return (

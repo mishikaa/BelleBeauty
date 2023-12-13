@@ -24,10 +24,10 @@ const BookAppointment: React.FC = () => {
   const [isLoading, setisLoading] = useState(false)
 
   // console.log(selectedServices, selectedDate, selectedTimeSlot)
-  const user = session?.user.id || null;
+  const user = session?.user?.id || null;
 
   // POST request to send the booking details to database
-  const handleSubmit = async(e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleSubmit = async(e: any) => {
     try {
       e.preventDefault();
       setisLoading(true);

@@ -12,6 +12,7 @@ const ProfilePage: React.FC = () => {
     const userId = user?.id;
     const [appointments, setAppointments] = useState([]);
 
+
     useEffect(() => {
         const fetchAppointments = async () => {
           try {

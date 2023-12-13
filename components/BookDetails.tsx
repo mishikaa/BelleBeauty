@@ -3,8 +3,6 @@
 import { useEffect, useState } from 'react';
 import '@styles/input.css';
 import Datepicker from "react-tailwindcss-datepicker";
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
 
 const BookDetails = ({selectedDate, setSelectedDate, selectedTimeSlot, setSelectedTimeSlot}) => {
     const [minDate, setMinDate] = useState<Date | null>(null);
