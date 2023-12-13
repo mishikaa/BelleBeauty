@@ -2,7 +2,7 @@ import { connectToDB } from '@utils/database';
 import Appointment from '@models/appointment';
 import { useRouter } from 'next/router';
 
-const fetchAll = async (req, res) => {
+const FetchAll = async (req, res) => {
   try {
     await connectToDB();
 
@@ -22,4 +22,4 @@ const fetchAll = async (req, res) => {
   }
 };
 
-export default fetchAll;
+export default FetchAll;

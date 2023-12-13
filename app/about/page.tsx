@@ -12,7 +12,7 @@ const About = () => {
             At BelleBeauty, we are on a mission to redefine beauty standards. Our goal is to provide
             exceptional beauty services that enhance your natural beauty and boost your confidence. We
             are committed to delivering a delightful experience and creating a positive impact on our
-            clients' lives.
+            clients&apos; lives.
           </p>
           <img
             src="https://source.unsplash.com/800x400/?beauty,salon"
@@ -55,7 +55,7 @@ const About = () => {
         <section className="mb-8">
           <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
           <p className="text-gray-400">
-            Have questions or want to schedule an appointment? Reach out to us! We'd love to hear from
+            Have questions or want to schedule an appointment? Reach out to us! We&apos;d love to hear from
             you.
           </p>
           <img
