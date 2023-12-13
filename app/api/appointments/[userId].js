@@ -1,14 +1,11 @@
 import { connectToDB } from '@utils/database';
 import Appointment from '@models/appointment';
-import { useRouter } from 'next/router';
 
 const FetchAll = async (req, res) => {
   try {
     await connectToDB();
 
-    const router = useRouter();
-
-    const userId = router.query.userId; 
+    const userId = req.query.userId
     const appointments = await Appointment.find({ customer: userId }).populate('selectedServices');
     console.log(appointments)
     
