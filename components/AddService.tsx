@@ -1,7 +1,6 @@
 "use client"; 
 
 import { useEffect, useState } from 'react';
-import Datepicker from "react-tailwindcss-datepicker";
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 

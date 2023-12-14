@@ -6,6 +6,7 @@ export const POST = async(req) => {
         const {customer, selectedServices, date, timeSlot} = await req.json();
         await connectToDB();
 
+        // console.log(customer, selectedServices, date, timeSlot)
         const newAppointment = new Appointment({
             customer: customer, 
             selectedServices: selectedServices,

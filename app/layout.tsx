@@ -10,6 +10,9 @@ import { Averia_Serif_Libre,Della_Respira } from 'next/font/google'
 const averia = Averia_Serif_Libre({ weight: '300',subsets: ['latin'] })
 const della = Della_Respira({ weight: '400',subsets: ['latin'] })
 
+import "slick-carousel/slick/slick.css";               //here
+import "slick-carousel/slick/slick-theme.css"; 
+
 export const metadata: Metadata = {
   title: 'BelleBeauty',
   description: 'A beauty salon website',

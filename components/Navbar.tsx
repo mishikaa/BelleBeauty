@@ -25,8 +25,11 @@ export const Navbar = () => {
     <>
       {/* NAVBAR */}
       <nav className="flex text-lg sticky top-0 justify-between items-center bg-[#212121] bg-opacity-75 mx-auto p-4 z-10">
-        <Link className="text-2xl font-bold drop-shadow-[1px_2px_1px_#ECD8BD]" href='/'>BelleBeauty</Link>
+        <div className='flex gap-2 justify-center items-center'>
+                                <img src="/logo/belleBeauty1.png" className="h-8 me-3" alt="logo" />
 
+        <Link className="text-2xl font-bold drop-shadow-[1px_2px_1px_#ECD8BD]" href='/'>BelleBeauty</Link>
+        </div>
         {/* Mobile Navigation Toggle Button */}
         <div className="sm:hidden flex">
           <button onClick={toggleMobileNav}>

@@ -1,4 +1,6 @@
 import { Schema, model, models } from "mongoose";
+import {Service} from "./service";
+import {User} from "./user";
 
 const AppointmentSchema = new Schema({
     customer: {

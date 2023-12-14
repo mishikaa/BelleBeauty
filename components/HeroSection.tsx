@@ -18,7 +18,7 @@ export const HeroSection = () => {
   }
 
   return (
-    <div className="h-min-screen flex-col">
+    <div className="h-min-screen w-full flex-col">
       <div className="flex flex-col md:flex-row container mx-auto gap-4 p-4">
         {/* Text section */}
         <div className="left_block flex flex-1 items-center">

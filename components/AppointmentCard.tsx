@@ -6,9 +6,13 @@ import React from 'react';
 //   appointment: AppointmentType;
 // }
 
-const AppointmentCard: React.FC = ({ appointment }) => {
+const AppointmentCard: React.FC = ({key, appointment, userIsAdmin }) => {
   return (
     <div className="border p-4 rounded-md shadow-md mb-4">
+      {userIsAdmin && (
+      <p>
+        <strong>Customer: </strong> {appointment.customer.email}
+      </p>)}
       <p>
         <strong>Date : </strong> {new Date(appointment.date).toLocaleDateString()}
       </p>
