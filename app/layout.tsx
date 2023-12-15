@@ -19,16 +19,13 @@ export const metadata: Metadata = {
   description: 'A beauty salon website',
 };
 
-interface RootLayoutProps {
-  children: ReactNode;
-  session: Session;
-}
 
-export const RootLayout: React.FC<RootLayoutProps> = ({ children, session }) => {
+
+export const RootLayout: React.FC = ({ children, session }) => {
   return (
     <html lang="en">
       <body className={`${raleway.className} bg-gray-900 text-slate-100`}>
-        <Provider session={session}>
+        <Provider>
           <Navbar />
           {children}
         </Provider>
