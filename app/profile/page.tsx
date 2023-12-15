@@ -6,17 +6,33 @@ import { isAdmin } from "@/utils/isAdmin";
 import AppointmentCard from "@/components/AppointmentCard";
 import ProfileCard from "@/components/ProfileCard";
 
+interface Customer {
+  email: string;
+}
+
+interface Service {
+  _id: string;
+  name: string;
+}
+
 interface Appointment {
   _id: string;
+  customer: Customer;
+  date: string; 
+  timeSlot: string;
+  selectedServices: Service[];
 }
 
 interface User {
   id: string;
+  image: string;
+  name: string;
+  email: string;
 }
 
 const ProfilePage: React.FC = () => {
   const { data: session } = useSession();
-  const user = session?.user as User | undefined;
+  const user = session?.user as User;
   const userId = user?.id;
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [userIsAdmin, setUserIsAdmin] = useState<boolean>(false);

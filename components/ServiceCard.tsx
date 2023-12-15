@@ -9,11 +9,12 @@ interface Service {
 }
 
 interface Props {
+  service: Service;
   selectedServices: string[];
   setSelectedServices: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const ServiceCard: React.FC<Props & { service: Service }> = ({ service, selectedServices, setSelectedServices }) => {
+const ServiceCard: React.FC<Props> = ({ service, selectedServices, setSelectedServices }) => {
   const isChecked = selectedServices.includes(service._id);
 
   const handleCheckboxChange = () => {

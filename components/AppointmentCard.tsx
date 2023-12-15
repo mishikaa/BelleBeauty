@@ -11,7 +11,7 @@ interface Service {
 interface Appointment {
   _id: string;
   customer: Customer;
-  date: string; // Change the type based on your actual data model
+  date: string; 
   timeSlot: string;
   selectedServices: Service[];
 }

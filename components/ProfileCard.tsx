@@ -2,6 +2,7 @@ import React from 'react';
 
 interface ProfileCardProps {
   user: {
+    id: string;
     image: string;
     name: string;
     email: string;
