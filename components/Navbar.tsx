@@ -7,7 +7,7 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 const Navbar: React.FC = () => {
   const { data: session } = useSession();
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
-  const [providers, setProviders] = useState<any>(null);
+  const [provider, setProvider] = useState<any>(null);
 
   const toggleMobileNav = () => {
     setMobileNavOpen(!isMobileNavOpen);
@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const fetchProviders = async () => {
       const response = await getProviders();
-      setProviders(response);
+      setProvider(response);
     };
     fetchProviders();
   }, []);
@@ -87,17 +87,14 @@ const Navbar: React.FC = () => {
                 </div>
               ) : (
                 <>
-                  {providers &&
-                    Object.values(providers).map((provider: any) => (
-                      <button
-                        type="button"
-                        key={provider.name}
-                        onClick={() => signIn(provider.id)}
-                        className="border border-slate-300 px-4 py-1 rounded-full outline-none hover:bg-slate-700 hover:font-bold focus-within:bg-slate-700 drop-shadow-[1px_1px_2px_#fff]"
-                      >
-                        Sign In
-                      </button>
-                    ))}
+                  <button
+                    type="button"
+                    key={provider.name}
+                    onClick={() => signIn(provider.id)}
+                    className="border border-slate-300 px-4 py-1 rounded-full outline-none hover:bg-slate-700 hover:font-bold focus-within:bg-slate-700 drop-shadow-[1px_1px_2px_#fff]"
+                  >
+                    Sign In
+                  </button>
                 </>
               )}
             </div>
@@ -138,17 +135,14 @@ const Navbar: React.FC = () => {
             </div>
           ) : (
             <>
-              {providers &&
-                Object.values(providers).map((provider: any) => (
-                  <button
-                    type="button"
-                    key={provider.name}
-                    onClick={() => signIn(provider.id)}
-                    className="border border-slate-300 px-4 py-1 rounded-full outline-none hover:bg-slate-700 hover:font-bold focus-within:bg-slate-700 drop-shadow-[1px_1px_2px_#fff]"
-                  >
-                    Sign In
-                  </button>
-                ))}
+              <button
+                type="button"
+                key={provider && provider.name}
+                onClick={() => signIn(provider.id)}
+                className="border border-slate-300 px-4 py-1 rounded-full outline-none hover:bg-slate-700 hover:font-bold focus-within:bg-slate-700 drop-shadow-[1px_1px_2px_#fff]"
+              >
+                Sign In
+              </button>
             </>
           )}
         </div>
