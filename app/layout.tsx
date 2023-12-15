@@ -24,7 +24,7 @@ interface RootLayoutProps {
   session: Session;
 }
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children, session }) => {
+export const RootLayout: React.FC<RootLayoutProps> = ({ children, session }) => {
   return (
     <html lang="en">
       <body className={`${raleway.className} bg-gray-900 text-slate-100`}>
@@ -36,5 +36,3 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children, session }) => {
     </html>
   );
 };
-
-export default RootLayout;
