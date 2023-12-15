@@ -5,7 +5,7 @@ import '@styles/globals.css';
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 import { Averia_Serif_Libre, Della_Respira } from 'next/font/google';
-// import { Session } from 'next-auth';
+import { Session } from 'next-auth';
 
 const raleway = Raleway({ subsets: ['latin'] });
 const averia = Averia_Serif_Libre({ weight: '300', subsets: ['latin'] });
@@ -39,13 +39,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  session,
 }: {
-  children: React.ReactNode
+  children: ReactNode;
+  session: Session;
 }) {
   return (
     <html lang="en">
       <body className={`${raleway.className} bg-gray-900 text-slate-100`}>
-        <Provider>
+        <Provider session={session}>
           <Navbar />
           {children}
         </Provider>
