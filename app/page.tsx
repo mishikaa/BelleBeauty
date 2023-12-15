@@ -1,11 +1,12 @@
-import { HeroSection } from "@/components/HeroSection";
-import { ImageSlider } from "@/components/ImageSlider";
-import TestimonialSection from "@/components/TestimonialSection";
-import Footer from "@components/Footer";
-import GallerySection from "@components/GallerySection";
+import React from 'react';
+import { HeroSection } from '@/components/HeroSection';
+import  ImageSlider  from '@/components/ImageSlider';
+import TestimonialSection from '@/components/TestimonialSection';
+import Footer from '@components/Footer';
+import GallerySection from '@components/GallerySection';
 
 // HOME PAGE
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div className="flex flex-col gap-5 justify-center items-center w-full h-full">
       <HeroSection />
@@ -13,7 +14,7 @@ const Home = () => {
       <TestimonialSection />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default Home;

@@ -1,12 +1,28 @@
 // components/AppointmentCard.tsx
-import React from 'react';
-// import { Appointment as AppointmentType } from '../types'; // Adjust the path based on your project structure
+interface Customer {
+  email: string;
+}
 
-// interface AppointmentCardProps {
-//   appointment: AppointmentType;
-// }
+interface Service {
+  _id: string;
+  name: string;
+}
 
-const AppointmentCard: React.FC = ({key, appointment, userIsAdmin }) => {
+interface Appointment {
+  _id: string;
+  customer: Customer;
+  date: string; // Change the type based on your actual data model
+  timeSlot: string;
+  selectedServices: Service[];
+}
+
+interface AppointmentCardProps {
+  key: string;
+  appointment: Appointment;
+  userIsAdmin: boolean;
+}
+
+const AppointmentCard: React.FC<AppointmentCardProps> = ({key, appointment, userIsAdmin }) => {
   return (
     <div className="border p-4 rounded-md shadow-md mb-4">
       {userIsAdmin && (
@@ -22,7 +38,7 @@ const AppointmentCard: React.FC = ({key, appointment, userIsAdmin }) => {
       <p>
         <strong>Selected Services : </strong>
         <ul>
-            {appointment.selectedServices.map(service => (
+            {appointment.selectedServices.map((service) => (
               <li key={service._id} className="mr-2">
                 {service.name} {/* Assuming there's a 'name' property on the Service model */}
               </li>

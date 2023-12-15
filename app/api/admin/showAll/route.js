@@ -1,6 +1,7 @@
 import {connectToDB} from '@utils/database';
 import Appointment from '@models/appointment';
 
+// GET  REQUEST TO FIND ALL THE APPOINTMENTS MADE(VISIBLE TO ADMIN ONLY)
 export const GET = async(req, res) => {
     try {
         await connectToDB();

@@ -1,3 +1,4 @@
+// ADD  SERVICE OPTION (FOR ADMIN ONLY)
 "use client"; 
 
 import { useState } from 'react';
@@ -30,7 +31,10 @@ const AddService = () => {
             e.preventDefault();
             setisLoading(true);
             
-            if(!service.name || !service.price) {
+            if(!session) {
+                alert('Please login as admin before adding a new service.')
+            }
+            else if(!service.name || !service.price) {
                 alert('Please add the essential details about the service');
             } else {
                 const response = await fetch('api/services/new', {

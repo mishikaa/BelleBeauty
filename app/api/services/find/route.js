@@ -2,25 +2,26 @@ import {connectToDB} from '@utils/database';
 import Service from '@models/service';
 
 export const GET = async(req) => {
-    // const {key} = req.json();
-    console.log(req)
-    // const {keyword} = params;
-    
-    // console.log("keyword: ",keyword)
+    const {searchParams} = req.url;
+    const {keyword} = searchParams;
+
     try {
         await connectToDB();
-        // const keyword = req.query.keyword
-        // console.log(keyword)
 
         const services = await Service.find({
-        name: {
-           $regex: new RegExp("a", "i"), // "i" for case-insensitive search
-        },
+            $or: [
+                { name: { $regex: new RegExp(keyword, "i") } },
+                { description: { $regex: new RegExp(keyword, "i") } },
+                { duration: { $regex: new RegExp(keyword, "i") } }, // Assuming duration is also a string
+                { price: { $regex: new RegExp(keyword, "i") } }
+            ]
         });
+        
         return new Response(JSON.stringify(services), {
             status: 200
         })
     } catch (error) {
+        console.error(error)
         return new Response("Failed to fetch all services. Please try again later.", {
             status: 500
         })

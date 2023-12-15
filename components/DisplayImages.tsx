@@ -1,7 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
 
-export const DisplayImages = ({ title, images }) => {
+interface DisplayImagesProps {
+  title: string;
+  images: string[];
+}
+
+
+const DisplayImages: React.FC<DisplayImagesProps> = ({ title, images }) => {
   return (
     <>
         <h2 className='font-bold tracking-wider italic underline underline-offset-8 text-gray-300 text-3xl p-4 flex items-center justify-center capitalize'>{title}</h2>
@@ -22,3 +28,6 @@ export const DisplayImages = ({ title, images }) => {
     </>
   );
 };
+
+export default DisplayImages;
+export type { DisplayImagesProps };

@@ -1,14 +1,20 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import PropTypes from 'prop-types'
+import './testimonial1.css';
 
-import './testimonial1.css'
+interface TestimonialCard1Props {
+  rootClassName?: string;
+  quote?: string;
+  location?: string;
+  profile_src?: string;
+  profile_alt?: string;
+  name?: string;
+}
 
-const TestimonialCard1 = (props) => {
+const TestimonialCard1: React.FC<TestimonialCard1Props> = (props) => {
   return (
-    <div
-      className="w-1/3 m-4 p-6 flex flex-col gap-8 bg-[var(--head-color)]"
-    >
+    <div className={`w-1/3 m-4 p-6 flex flex-col gap-8 bg-[var(--head-color)] ${props.rootClassName}`}>
       <div className="px-4">
         {/* Quote icon */}
         <svg viewBox="0 0 1024 1024" className="w-16">
@@ -19,7 +25,7 @@ const TestimonialCard1 = (props) => {
         </svg>
         <span className="testimonial-card2-text">{props.quote}</span>
       </div>
-      
+
       <div className='flex gap-10 justify-center items-center'>
         <img
           alt={props.profile_alt}
@@ -32,8 +38,8 @@ const TestimonialCard1 = (props) => {
         </section>
       </div>
     </div>
-  )
-}
+  );
+};
 
 TestimonialCard1.defaultProps = {
   rootClassName: '',
@@ -44,7 +50,7 @@ TestimonialCard1.defaultProps = {
     'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDE0fHxwb3J0cmFpdHxlbnwwfHx8fDE2MjYzNzg5NzI&ixlib=rb-1.2.1&h=1200',
   profile_alt: 'profile',
   name: 'John Doe',
-}
+};
 
 TestimonialCard1.propTypes = {
   rootClassName: PropTypes.string,
@@ -53,6 +59,6 @@ TestimonialCard1.propTypes = {
   profile_src: PropTypes.string,
   profile_alt: PropTypes.string,
   name: PropTypes.string,
-}
+};
 
-export default TestimonialCard1
+export default TestimonialCard1;

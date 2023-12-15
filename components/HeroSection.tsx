@@ -50,7 +50,7 @@ export const HeroSection = () => {
             <img className="h-8" src="/logo/diamond.png" alt="diamond" />
             <p>Quality</p>
           </span>
-          <span className="flex items-center hidden md:flex gap-2">
+          <span className="items-center hidden md:flex gap-2">
             <img className="h-8" src="/logo/certificate.png" alt="certificate" />
             <p>Certified</p>
           </span>

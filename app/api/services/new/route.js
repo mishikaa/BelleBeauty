@@ -16,7 +16,7 @@ export const POST = async(req) => {
         })
         await newService.save();
 
-        console.log("new service", newService)
+        // console.log("new service", newService)
         return new Response(JSON.stringify(newService), {
             status: 201
         })

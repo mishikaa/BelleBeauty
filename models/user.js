@@ -9,9 +9,9 @@ const UserSchema = new Schema({
     username: {
         type: String,
       },
-      image: {
-        type: String
-      }
+    image: {
+      type: String
+    }
 })
 
 const User = models.User || model("User", UserSchema);

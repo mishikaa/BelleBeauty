@@ -1,9 +1,14 @@
+// A Next.js API route that utilizes the next-auth library to implement authentication 
+// using Google OAuth FOR LOGIN/SIGNUP FUNCTIONALITY
+
 import NextAuth from "next-auth";
 import GoogleProvider from 'next-auth/providers/google';
 
 import User from '@models/user';
 import {connectToDB} from '@utils/database';
 
+
+// Configuration object for NextAuth function
 const handler = NextAuth({
     providers: [
         GoogleProvider({
@@ -12,14 +17,17 @@ const handler = NextAuth({
         })
     ],
     callbacks: {
+        // Called whenever a session is created
         async session({session}) {
             const sessionUser = await User.findOne({
                 email: session.user.email
             })
+            // Updating the session with the current userId
             session.user.id = sessionUser._id.toString();
     
             return session;
         },
+
         async signIn({profile}) {
             try {
                 // serverless

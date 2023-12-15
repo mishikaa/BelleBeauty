@@ -21,6 +21,3 @@ const ServiceSchema = new Schema({
 const Service = models.Service || model('Service', ServiceSchema);
 
 export default Service;
-
-  // Price in the salon's currency
-//   category: { type: mongoose.Schema.Types.ObjectId, ref: 'ServiceCategory', required: true },

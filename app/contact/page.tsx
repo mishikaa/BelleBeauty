@@ -1,9 +1,18 @@
 "use client";
 
 import emailjs from '@emailjs/browser';
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
-const Contact = () => {
+// Define the FormData type
+interface FormData {
+  from: string;
+  phone: string;
+  first: string;
+  last: string;
+  message: string;
+}
+
+const Contact: React.FC = () => {
     const [isLoading, setisLoading] = useState(false);
     const [formData, setFormData] = useState({
         from: '',
@@ -13,7 +22,7 @@ const Contact = () => {
         message: ''
     }) 
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prevFormData) => ({
           ...prevFormData,
@@ -21,12 +30,12 @@ const Contact = () => {
         }));
     };
       
-    const handleSubmit = async(e: any) => {
+    const handleSubmit = async(e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
         
-        const serviceId = "service_3je505p";
-        const templateId = "template_mo3ed0d";
-        const publicKey = "vn39s7HTQs3K1NH9C";
+        const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID  ||  '';
+        const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID || '';
+        const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY  || '';
 
         try {
             setisLoading(true)
@@ -34,7 +43,7 @@ const Contact = () => {
   
             if (response) {
               alert('Thanks for contacting us, we will get back to you soon!');
-              // Reset the form after submission
+              // Resetting the form after submission
               setFormData({
                 from: '',
                 phone: '',

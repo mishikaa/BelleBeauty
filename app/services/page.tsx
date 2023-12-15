@@ -1,7 +1,13 @@
 import React from 'react';
 
-const Services = () => {
-  const servicesData = [
+interface Service {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+const Services: React.FC = () => {
+  const servicesData: Service[] = [
     {
       title: 'Hair Styling',
       description: 'Transform your look with our expert hair styling services. Whether it\'s a trendy cut, color, or special occasion styling, we\'ve got you covered.',
@@ -47,7 +53,6 @@ const Services = () => {
       description: 'Make your special day even more memorable with our bridal packages. From pre-wedding treatments to bridal makeup, we have everything to make you feel beautiful.',
       imageUrl: 'https://source.unsplash.com/800x600/?bridal,packages',
     },
-    // Add more services as needed
   ];
 
   return (
@@ -65,7 +70,13 @@ const Services = () => {
   );
 };
 
-const ServiceCard = ({ title, description, imageUrl }) => {
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, imageUrl }) => {
   return (
     <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
       <img src={imageUrl} alt={title} className="mb-4 rounded-md h-40 w-full object-cover" />
