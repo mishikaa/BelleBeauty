@@ -4,9 +4,15 @@ import { useEffect, useState, ChangeEvent } from 'react';
 import '@styles/input.css';
 import  Datepicker, { DateValueType } from 'react-tailwindcss-datepicker';
 
+
+interface SelectedDateRange {
+  startDate: Date | null;
+  endDate: Date | null;
+}
+
 interface BookDetailsProps {
-  selectedDate: Date | null;
-  setSelectedDate: React.Dispatch<React.SetStateAction<Date | null>>;
+  selectedDate: SelectedDateRange;
+  setSelectedDate: Function;
   selectedTimeSlot: string;
   setSelectedTimeSlot: React.Dispatch<React.SetStateAction<string>>;
 }
