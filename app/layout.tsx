@@ -15,7 +15,7 @@ const della = Della_Respira({ weight: '400', subsets: ['latin'] });
 // import 'slick-carousel/slick/slick-theme.css';
 
 export const metadata: Metadata = {
-  title: 'BelleBeauty',
+  title: 'MysticMirage',
   description: 'A beauty salon website',
 };
 

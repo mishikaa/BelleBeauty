@@ -17,7 +17,6 @@
 
 ![Downloads](https://img.shields.io/github/downloads/mishikaa/BelleBeauty/total) 
 ![Contributors](https://img.shields.io/github/contributors/mishikaa/BelleBeauty?color=dark-green) 
-![License](https://img.shields.io/github/license/mishikaa/BelleBeauty)
 
 ## Table Of Contents
 

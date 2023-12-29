@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
         <div className="flex gap-2 justify-center items-center">
           <img src="/logo/belleBeauty1.png" className="h-8 me-3" alt="logo" />
           <Link className="text-2xl font-bold drop-shadow-[1px_2px_1px_#ECD8BD]" href="/">
-            BelleBeauty
+            MysticMirage
           </Link>
         </div>
         {/* Mobile Navigation Toggle Button */}

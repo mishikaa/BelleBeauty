@@ -18,8 +18,8 @@ interface TestimonialsCarouselProps {
 
 const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = (props) => {
   const testimonials: Testimonial[] = [
-    { id: 1, name: 'John Doe', text: 'Amazing experience with BelleBeauty!' },
-    { id: 2, name: 'Jane Smith', text: 'The best beauty services in town.' },
+    { id: 1, name: 'Savita Das', text: 'Amazing experience with MysticMirage!' },
+    { id: 2, name: 'Rashmi Gupta', text: 'The best beauty services in town.' },
     // Add more testimonials as needed
   ];
 

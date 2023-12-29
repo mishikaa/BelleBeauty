@@ -1,13 +1,13 @@
 const About = () => {
   return (
     <div className="bg-gray-900 text-white">
-      <h1 className='text-4xl text-center uppercase font-bold py-8 bg-gray-800'>About BelleBeauty</h1>
+      <h1 className='text-4xl text-center uppercase font-bold py-8 bg-gray-800'>About MysticMirage</h1>
 
       <div className="container mx-auto p-8">
         <section className="mb-8">
           <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
           <p className="text-gray-400">
-            At BelleBeauty, we are on a mission to redefine beauty standards. Our goal is to provide
+            At MysticMirage, we are on a mission to redefine beauty standards. Our goal is to provide
             exceptional beauty services that enhance your natural beauty and boost your confidence. We
             are committed to delivering a delightful experience and creating a positive impact on our
             clients&apos; lives.
@@ -22,7 +22,7 @@ const About = () => {
         <section className="mb-8">
           <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
           <p className="text-gray-400">
-            Get to know the passionate and skilled professionals behind BelleBeauty. Our team is
+            Get to know the passionate and skilled professionals behind MysticMirage. Our team is
             dedicated to delivering top-notch beauty services tailored to your unique needs. We
             prioritize creativity, innovation, and customer satisfaction in everything we do.
           </p>
