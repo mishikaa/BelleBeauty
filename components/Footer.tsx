@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
             <div className="sm:flex sm:items-center sm:justify-between">
               <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://MysticMirage.vercel.app/" className="hover:underline">MysticMirage</a>. All Rights Reserved.
               </span>
-              <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">Made by <Link href='https://mishikajaiswal.netlify.app/'>Mishika Jaiswal</Link>
+              <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">Made by <Link href='https://mishikajaiswal.netlify.app/' target='_blank'>Mishika Jaiswal</Link>
               </span>
               <div className="flex mt-4 sm:justify-center sm:mt-0">
                   <a href="https://www.facebook.com/aishwarya.jaiswal.5095?mibextid=vk8aRt" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
